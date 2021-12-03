@@ -1,27 +1,9 @@
 import Node from "./Node"
-function Nodes(){
-    const people = [
-        {
-            id:1,
-            name:'yujin',
-            age:30,
-            skill:'React'
-        },{
-            id:2,
-            name:'yumin',
-            age:27,
-            skill:'Angular'
-        },{
-            id:3,
-            name:'john',
-            age:29,
-            skill:'Java'
-        },
-    ]
-    const peopleList = people.map(person => <Node person={person}/>)
+function Nodes({posts}){
+    const directoryList = posts.map(post=><Node post={post}/>)
     return(
-        <div>
-            {peopleList}
+        <div className="Nodes" >
+            {directoryList}
         </div>
     )
 }

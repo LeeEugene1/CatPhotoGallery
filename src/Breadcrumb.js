@@ -2,7 +2,8 @@ function Breadcrumb(){
     return(
         <nav className="Breadcrumb">
             <div>root</div>
-            <div>노란고양이</div>
+            {/* <div>{title.name}</div> */}
+            {/* <div>yelloCat</div> */}
         </nav>
     )
 }
