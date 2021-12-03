@@ -1,3 +1,11 @@
+# 소개
+토이 프로젝트를하면서 리액트 공부내용을 정리한다.
+
+## branch
+- reactStudy : study폴더에 내용을 정리한다.
+- master : 고양이 사진첩 토이 프로젝트
+* 새로운 토이 프로젝트를 할경우 고양이 사진첩 토이프로젝트를 브랜치 catGallery에 최종본 저장한다.
+
 # Hook 함수 정리
 
 ## useRef
@@ -29,38 +37,4 @@ useEffect(()=>{
 useEffect(()=>{
     loadPost(username, urlSlug)
 },[username, urlSlug])
-```
-
-# 라이브러리
-
-## React-Route
-적용하기
-app을 BrowserRouter로 감싸줄것
-```
-...
-import { BrowserRouter } from 'react-router-dom';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter><App /></BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-```
-예시
-```
-<div>
-    <ul>
-        <li>
-            <Link to="/">Home</Link>
-        </li>
-        <li>
-            <Link to="/about">About</Link>
-        </li>
-    </ul>
-    <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-    </Routes>
-</div>
 ```
