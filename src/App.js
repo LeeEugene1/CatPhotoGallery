@@ -1,26 +1,16 @@
-// import './App.css';
+import './App.css';
 import React from 'react';
-import Home from './Home';
-import About from './About';
-import {Route,Routes,Link} from 'react-router-dom';
-
+import Breadcrumb from './Breadcrumb';
+import Nodes from './Nodes';
 function App() {
   return (
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-      </ul>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/about" element={<About/>} />
-      </Routes>
-    </div>
-    
+    <body>
+        <h1>고양이 사진첩</h1>
+        <main className="App">
+          <Breadcrumb/>
+          <Nodes/>
+        </main>
+    </body>
   );
 }
 
