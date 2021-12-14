@@ -1,10 +1,10 @@
 import directory from './assets/directory.png'
 
-function Node({post}){
+function Node({post, alt}){
     return(
         <div className="Node">
-            <img src={directory} alt="폴더"/>
-            <div key={post.id}>{post.name}</div>
+            <img src={directory} alt={alt}/>
+            <div>{post.name}</div>
         </div>
     )
 }

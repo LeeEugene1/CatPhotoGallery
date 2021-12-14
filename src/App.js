@@ -19,14 +19,14 @@ function App() {
   },[])
   // const titleList = posts.map(title => <Breadcrumb title={title}/>)
   return (
-    <body>
+    <div>
         <h1>고양이 사진첩</h1>
         <main className="App">
           <Breadcrumb/>
           {/* {titleList} */}
           <Nodes posts={posts}/>
         </main>
-    </body>
+    </div>
   );
 }
 
