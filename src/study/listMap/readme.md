@@ -67,3 +67,43 @@ function App() {
 export default App;
 
 ```
+
+## indivisual post by parsing post id(after ButtonClick)
+```javascript
+import './App.css';
+import React from 'react';
+import { useState, useEffect } from "react"
+import axios from "axios"
+
+function App() {
+  const [post, setPost] = useState({})
+  const [id, setId] = useState(1)
+  const [idFromButtonClick, setIdFromButtonClick] = useState(1)
+  const buttonClick = () =>{
+    setIdFromButtonClick(id)
+  }
+  const idChange = (e)=>{
+    setId(e.target.value)
+  }
+  useEffect(()=>{
+      axios.get(`https://jsonplaceholder.typicode.com/posts/${idFromButtonClick}`)
+      .then(res=>{
+          console.log(res)
+          setPost(res.data)
+      })
+      .catch(err=>{
+          console.log(err)
+      })
+  },[idFromButtonClick])
+  return (
+    <div>
+        <input type="text" value={id} onChange={idChange}/>
+        <button onClick={buttonClick}>search</button>
+        <div>{post.title}</div>
+    </div>
+  );
+}
+
+export default App;
+
+```
