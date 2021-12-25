@@ -1,7 +1,7 @@
-function Breadcrumb(){
+function Breadcrumb({catName}){
     return(
         <nav className="Breadcrumb">
-            <div>root</div>
+            <div>root - {catName}</div>
             {/* <div>{title.name}</div> */}
             {/* <div>yelloCat</div> */}
         </nav>
