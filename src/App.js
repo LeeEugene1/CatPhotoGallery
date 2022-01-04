@@ -1,5 +1,4 @@
 import './App.css';
-import React from 'react';
 import Breadcrumb from './Breadcrumb';
 import { useState, useEffect } from "react"
 import axios from "axios"
@@ -33,7 +32,7 @@ function App() {
         <h1>고양이 사진첩{error ? error : null}</h1>
         <input type="text" value={id} onChange={(e)=>{
           setId(e.target.value)
-          // setCatName()
+          setCatName()
         }}/>
         <div>{posts.name}</div>
         {loading ? <img src={loadingImg} alt="loading"></img> : 
@@ -43,7 +42,6 @@ function App() {
               <Nodes posts={posts}/>
             </main>
         }
-        
     </div>
   );
 }
