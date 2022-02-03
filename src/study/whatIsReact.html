@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <button id="btn_plus">+</button>
+</body>
+<script>
+//direct dom control
+    // const root = document.querySelector('#root')
+    // const btn = document.querySelector('#btn_plus')
+
+    // let i = 0;
+    // root.innerHTML = `<p>init : 0</p>`
+    // btn.addEventListener('click',()=>{
+    //     root.innerHTML = `<p>init : ${++i}</p>`
+    // })
+
+//리액트 원리
+//초기값
+// const component = {
+//     message:'init',
+//     count:0,
+//     render(){
+//         return `<p>${this.message} : ${this.count}</p>`
+//     }
+// }
+
+// function render(rootElement, component){
+//     rootElement.innerHTML = component.render()
+// }
+
+// render(document.querySelector('#root'), component)
+
+// document.querySelector('#btn_plus').addEventListener('click',()=>{
+//     component.message = 'update'
+//     component.count = component.count + 1
+
+//     render(document.querySelector('#root'), component)
+// })
+</script>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script>
+console.log(React)
+console.log(ReactDOM)
+
+// <p>""</p>
+const Component = props =>{
+    return React.createElement('p', null, `${props.message} : ${props.count}`)
+}
+
+// virtual DOM
+ReactDOM.render(
+    React.createElement(Component, {message: 'init', count:0}, null), 
+    document.querySelector('#root')
+)
+
+document.querySelector('#btn_plus').addEventListener('click',()=>{
+    // 같은돔(virtualDOM)을 내용만 바꿔서 그대로 랜더
+    ReactDOM.render(
+    React.createElement(Component, {message: 'update', count:10}, null), 
+    document.querySelector('#root')
+)
+})
+</script>
+</html>
